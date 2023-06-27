@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests Tour Details component Should render Tour Details Page Component 1`] = `
+<section
+  className="h-screen flex flex-col bg-gray-200"
+>
+  <div
+    className="w-full h-[5rem] bg-gray-100 flex justify-between items-center"
+  >
+    <h4
+      className="ml-12 font-bold text-lg"
+    >
+      Welcome
+    </h4>
+    <div
+      className="mr-4 md:mr-12"
+    >
+      <button
+        className="relative inline-flex items-center justify-center p-0.5 mb-2 md:mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800"
+        type="submit"
+      >
+        <a
+          className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0"
+          href="http:/login"
+        >
+          Login
+        </a>
+      </button>
+    </div>
+  </div>
+  <div
+    className="flex flex-col md:justify-evenly justify-around h-full"
+  >
+    <div
+      className="flex flex-col align-middle text-center"
+    >
+      <h2
+        className="text-2xl font-extrabold"
+      >
+        LATEST PLACE
+      </h2>
+      <h5
+        className="text-base md:text-xl text-bGrey"
+      >
+        Please Select where you want to visit
+      </h5>
+    </div>
+    <div
+      className=" w-full flex items-center justify-between flex-col md:flex-row"
+    >
+      <div
+        className="flex items-center justify-evenly w-full md:flex-row flex-col"
+      >
+        <h3>
+          There is no tour kindly add
+        </h3>
+      </div>
+    </div>
+    <div
+      className="flex flex-row-reverse md:hidden bg-background"
+    />
+  </div>
+</section>
+`;

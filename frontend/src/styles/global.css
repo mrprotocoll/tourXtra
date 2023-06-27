@@ -1,0 +1,107 @@
+body {
+  margin: 0;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    'Roboto',
+    'Oxygen',
+    'Ubuntu',
+    'Cantarell',
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family:
+    source-code-pro,
+    Menlo,
+    Monaco,
+    Consolas,
+    'Courier New',
+    monospace;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+/* .main {
+
+} */
+
+.Home {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.card-main {
+  width: 20rem;
+  line-height: 14px;
+  height: 24rem;
+}
+
+.card-main img {
+  width: 100%;
+  height: 14rem;
+  border-radius: 0.5rem;
+}
+
+.card-main h3 {
+  text-align: center;
+}
+
+.Des {
+  text-align: center;
+}
+
+.button-next {
+  border-radius: 1rem 0 0 1rem;
+  width: 5rem;
+  margin: 0;
+  padding: 1rem;
+  border: none;
+}
+
+.button-pre {
+  width: 5rem;
+  margin: 0;
+  background-color: #49a92780;
+  padding: 1rem;
+  border: none;
+  border-radius: 0 1rem 1rem 0;
+}
+
+.button-next span {
+  color: rgb(237, 222, 222);
+  font-size: 2rem;
+}
+
+.button-pre span {
+  color: rgb(237, 222, 222);
+  font-size: 2rem;
+}
+
+@media (max-width: 767px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .get_username {
+    margin-left: 65px;
+  }
+}

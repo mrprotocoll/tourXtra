@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests Login component Should render Navbar Component 1`] = `
+<div
+  className="auth_container"
+>
+  <form
+    className="auth_form"
+    onSubmit={[Function]}
+  >
+    <h1
+      className="text-xl font-black mb-5"
+    >
+      Login
+    </h1>
+    <input
+      className="form_input"
+      onChange={[Function]}
+      placeholder="Email"
+      required={true}
+      type="email"
+      value=""
+    />
+    <input
+      className="form_input"
+      onChange={[Function]}
+      placeholder="Password"
+      required={true}
+      type="password"
+      value=""
+    />
+    <div
+      className="flex justify-between items-center"
+    >
+      <button
+        className="outline_btn"
+        type="submit"
+      >
+        Login
+      </button>
+      <div
+        className="alt"
+      >
+        Don't have an account? 
+        <a
+          className="text-primary"
+          href="/signup"
+        >
+          Sign up
+        </a>
+      </div>
+    </div>
+  </form>
+</div>
+`;
