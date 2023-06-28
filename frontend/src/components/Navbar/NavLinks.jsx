@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
-import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+import {
+  Link, NavLink, useLocation, useNavigate,
+} from 'react-router-dom';
 import { destroySession, TOKENKEY } from 'util/auth';
+import NavLinkItem from './ NavLinkItem';
 
 // eslint-disable-next-line react/prop-types
 const NavLinks = ({ toggleNavbar }) => {
@@ -25,15 +28,8 @@ const NavLinks = ({ toggleNavbar }) => {
 
   return (
     <ul className="mt-4 w-full text-lg sm:text-lg font-bold" onClick={toggleNavbar}>
-      <li
-        className={`pl-4 py-2 ${
-          isActive('/')
-            ? 'bg-lGreen text-white'
-            : 'hover:bg-lGreen hover:text-white'
-        }`}
-      >
-        <NavLink to="/">TOURS</NavLink>
-      </li>
+      <NavLinkItem name="TOURS" isActive={isActive} Link="/" />
+
       <li
         className={`pl-4 py-2 ${
           isActive('/reservations')

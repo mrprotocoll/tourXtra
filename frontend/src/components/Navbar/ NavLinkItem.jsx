@@ -8,14 +8,14 @@ const NavLinkItem = ({ name, link, isActive }) => (
       : 'hover:bg-lGreen hover:text-white'
   }`}
   >
-    <NavLink to="/">{name}</NavLink>
+    <NavLink to={link}>{name}</NavLink>
   </li>
 );
 
 NavLinkItem.propTypes = {
-    name: PropTypes.string.isRequired,
-    link: PropTypes.string.isRequired,
-    isActive: PropTypes.func.isRequired,
+  name: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
+  isActive: PropTypes.func.isRequired,
 };
 
 export default NavLinkItem;
