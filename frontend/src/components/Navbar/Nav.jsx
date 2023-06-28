@@ -35,12 +35,13 @@ const Nav = () => {
             <img className="h-10" src={Logo} alt="Logo" />
           </NavLink>
         </div>
+
         <NavLinks />
         <MediaLinks />
-        <p className="text-xs sm:text-sm text-gray-500 fixed bottom-6 left-6">
-          © 2023 TourX
-        </p>
+
+        <p className="text-xs sm:text-sm text-gray-500 fixed bottom-6 left-6">© 2023 TourX</p>
       </nav>
+      
       <div className="sm:hidden">
         <nav
           ref={navRef}

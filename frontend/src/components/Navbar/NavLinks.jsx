@@ -24,7 +24,6 @@ const NavLinks = ({ toggleNavbar }) => {
   }, [isLoggedIn, handleLogout]);
 
   return (
-
     <ul className="mt-4 w-full text-lg sm:text-lg font-bold" onClick={toggleNavbar}>
       <li
         className={`pl-4 py-2 ${
