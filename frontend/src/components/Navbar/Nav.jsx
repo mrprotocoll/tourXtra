@@ -3,7 +3,6 @@ import { IoMdMenu, IoMdClose } from 'react-icons/io';
 import { NavLink } from 'react-router-dom';
 import NavLinks from './NavLinks';
 import SocialLinks from './SocialLinks';
-import Logo from '../../Images/logo.png';
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,7 +31,7 @@ const Nav = () => {
         <div className="flex p-2 pb-14">
           <NavLink to="/">
             {' '}
-            <img className="h-10" src={Logo} alt="Logo" />
+            <img className="h-10" src="logo.png" alt="Logo" />
           </NavLink>
         </div>
 
@@ -59,7 +58,7 @@ const Nav = () => {
           <div className="flex p-2">
             <NavLink to="/">
               {' '}
-              <img src={Logo} alt="Logo" />
+              <img src="logo.png" alt="Logo" />
             </NavLink>
           </div>
           <NavLinks toggleNavbar={toggleNavbar} />
