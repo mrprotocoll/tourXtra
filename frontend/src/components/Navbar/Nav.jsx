@@ -41,7 +41,7 @@ const Nav = () => {
 
         <p className="text-xs sm:text-sm text-gray-500 fixed bottom-6 left-6">© 2023 TourX</p>
       </nav>
-      
+
       <div className="sm:hidden">
         <nav
           ref={navRef}
