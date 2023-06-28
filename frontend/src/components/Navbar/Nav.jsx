@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { IoMdMenu, IoMdClose } from 'react-icons/io';
 import { NavLink } from 'react-router-dom';
 import NavLinks from './NavLinks';
-import MediaLinks from './MediaLinks';
+import SocialLinks from './SocialLinks';
 import Logo from '../../Images/logo.png';
 
 const Nav = () => {
@@ -37,7 +37,7 @@ const Nav = () => {
         </div>
 
         <NavLinks />
-        <MediaLinks />
+        <SocialLinks />
 
         <p className="text-xs sm:text-sm text-gray-500 fixed bottom-6 left-6">© 2023 TourX</p>
       </nav>
@@ -63,9 +63,9 @@ const Nav = () => {
             </NavLink>
           </div>
           <NavLinks toggleNavbar={toggleNavbar} />
-          <MediaLinks />
+          <SocialLinks />
           <p className="text-xs sm:text-sm text-gray-500 fixed bottom-6 left-10">
-            © 2023 TourX
+            © 2023 TourXtra
           </p>
         </nav>
       </div>
