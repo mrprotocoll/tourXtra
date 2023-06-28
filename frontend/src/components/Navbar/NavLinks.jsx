@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react';
-import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { destroySession, TOKENKEY } from 'util/auth';
 import NavLinkItem from './NavLinkItem';
 
 // eslint-disable-next-line react/prop-types
 const NavLinks = ({ toggleNavbar }) => {
-  const location = useLocation();
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const items = [
@@ -15,8 +14,6 @@ const NavLinks = ({ toggleNavbar }) => {
     { name: 'ADD RESERVATION', link: '/add-reservation' },
     { name: 'DELETE TOUR', link: '/delete-tour' },
   ];
-
-  const isActive = (path) => location.pathname === path;
 
   const handleLogout = (e) => {
     e.preventDefault();
@@ -35,7 +32,7 @@ const NavLinks = ({ toggleNavbar }) => {
     <ul className="mt-4 w-full text-lg sm:text-lg font-bold" onClick={toggleNavbar}>
       {
         items.map((item) => (
-          <NavLinkItem key={item.name} name={item.name} isActive={isActive} link={item.link} />
+          <NavLinkItem key={item.name} name={item.name} link={item.link} />
         ))
       }
 

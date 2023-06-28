@@ -11,8 +11,8 @@ const SocialLinkItem = ({ link, children }) => (
   </a>
 );
 
-SocialLinkItem.protoTypes = {
-  children: protoTypes.component.isRequired,
+SocialLinkItem.propTypes = {
+  children: PropTypes.elementType.isRequired,
   link: PropTypes.string.isRequired,
 };
 
