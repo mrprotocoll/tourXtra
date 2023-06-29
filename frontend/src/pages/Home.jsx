@@ -5,7 +5,6 @@ import { BiRightArrow, BiLeftArrow } from 'react-icons/bi';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchTours } from 'redux/tours/tours';
 import { USERKEY, getUser } from 'util/auth';
-import Log from 'components/Lognin/out/log';
 
 // eslint-disable-next-line consistent-return
 const Home = () => {
@@ -59,7 +58,6 @@ const Home = () => {
               {user.name}
             </h4>
           )}
-        <Log />
       </div>
       <div className="flex flex-col md:justify-evenly justify-around h-full">
         <div className="flex flex-col align-middle text-center">
