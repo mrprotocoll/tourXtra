@@ -7,8 +7,8 @@ const NavLinkItem = ({ name, link }) => {
   return (
     <li className={`pl-4 py-2 ${
       location.pathname === link
-        ? 'bg-lGreen text-white'
-        : 'hover:bg-lGreen hover:text-white'
+        ? 'bg-primary text-white'
+        : 'hover:bg-primary hover:text-white'
     }`}
     >
       <NavLink to={link}>{name}</NavLink>
