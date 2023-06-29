@@ -1,8 +1,13 @@
 import { NavLink } from "react-router-dom";
 import NavLinks from "./NavLinks";
 import SocialLinks from "./SocialLinks";
+import { IoMdMenu, IoMdClose } from 'react-icons/io';
 
 const MobileNv = () => {
+    const toggleNavbar = () => {
+        setIsOpen(!isOpen);
+    };
+
     return  (
         <div className="sm:hidden">
             <nav
