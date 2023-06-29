@@ -56,11 +56,9 @@ const Nav = () => {
             {isOpen ? <IoMdClose size={32} /> : <IoMdMenu size={32} />}
           </button>
           <div className="flex p-2">
-            <NavLink to="/">
-              {' '}
-              <img src="logo.png" alt="Logo" />
-            </NavLink>
+            <NavLink to="/"><img src="logo.png" alt="Logo" /></NavLink>
           </div>
+
           <NavLinks toggleNavbar={toggleNavbar} />
           <SocialLinks />
           <p className="text-xs sm:text-sm text-gray-500 fixed bottom-6 left-10">

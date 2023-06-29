@@ -1,8 +1,8 @@
 import NavLinkItem from './NavLinkItem';
+import Session from './Session';
 
 // eslint-disable-next-line react/prop-types
 const NavLinks = ({ toggleNavbar }) => {
-  
   const items = [
     { name: 'TOURS', link: '/' },
     { name: 'MY RESERVATIONS', link: '/reservations' },
@@ -18,9 +18,7 @@ const NavLinks = ({ toggleNavbar }) => {
           <NavLinkItem key={item.name} name={item.name} link={item.link} />
         ))
       }
-
-      
-
+      <Session />
     </ul>
   );
 };
