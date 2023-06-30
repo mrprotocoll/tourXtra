@@ -25,6 +25,34 @@ export const fetchToursAll = createAsyncThunk('tours/fetchToursAll', async () =>
   return data;
 });
 
+export const createTour = createAsyncThunk(
+  'tour/createTour',
+  async ({ tour, toast, navigate }) => {
+    try {
+      const response = await fetch(
+        `${process.env.REACT_APP_API_URL}/tours`,
+        {
+          method: 'POST',
+          headers: {
+            Authorization: `Bearer ${JSON.parse(localStorage.getItem(TOKENKEY)) ?? null}`,
+          },
+          body: tour,
+        },
+      );
+
+      if (response.ok) {
+        const data = await response.json();
+        toast.success('Tour Created Successfully');
+        navigate('/');
+        return data;
+      }
+      return toast.error('Oops Something went wrong. Try again!');
+    } catch (error) {
+      return error;
+    }
+  },
+);
+
 export const deleteTour = createAsyncThunk(
   'tours/deleteTour',
   async (tourId) => {
@@ -45,6 +73,8 @@ const ToursSlice = createSlice({
   initialState: {
     data: [],
     myTours: [],
+    error: null,
+    loading: false,
   },
   reducers: {},
   extraReducers(builder) {
@@ -70,6 +100,18 @@ const ToursSlice = createSlice({
           }
           return tour;
         });
+      })
+
+      .addCase(createTour.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(createTour.fulfilled, (state, action) => {
+        state.data.push(action.payload);
+        state.loading = false;
+      })
+      .addCase(createTour.rejected, (state, action) => {
+        state.error = action.payload.error;
+        state.loading = false;
       });
   },
 });

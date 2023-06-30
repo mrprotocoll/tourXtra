@@ -4,6 +4,7 @@ import React, { useState, useRef } from 'react';
 import { TOKENKEY } from 'util/auth';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 const AddTours = () => {
   const [name, setName] = useState('');
@@ -14,6 +15,7 @@ const AddTours = () => {
   const [des, setDes] = useState('');
   const navigate = useNavigate();
   const fileInputRef = useRef(null);
+  const dispatch = useDispatch()
 
   const handleReset = () => {
     fileInputRef.current.value = '';
@@ -55,7 +57,6 @@ const AddTours = () => {
 
   return (
     <div className="flex flex-col items-center justify-center">
-
       <form onSubmit={handleSubmit} className="w-full max-w-lg">
         <h3 className="text-3xl text-center font-bold mt-[35px]">Add Tours</h3>
         <div className="flex flex-wrap -mx-3 mb-2">

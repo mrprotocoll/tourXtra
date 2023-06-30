@@ -85,7 +85,7 @@ const TourSlider = () => {
             type="button"
             onClick={handleNext}
             disabled={currentPage === totalPages}
-            className="bg-primary text-white hover:bg-lime-400 font-bold py-3 px-4 button-next hidden md:block"
+            className="bg-primary text-white font-bold py-3 px-4 button-next hidden md:block"
           >
             <span className="text-xl"><BiRightArrow /></span>
           </button>
@@ -98,7 +98,7 @@ const TourSlider = () => {
             type="button"
             onClick={handlePrev}
             disabled={currentPage === 1}
-            className="font-bold text-green-500 hover:text-green-400 px-4"
+            className="font-bold text-primary  px-4"
           >
             <span>Prev</span>
           </button>
@@ -108,7 +108,7 @@ const TourSlider = () => {
             type="button"
             onClick={handleNext}
             disabled={currentPage === totalPages}
-            className="font-bold text-blue-700 hover:text-green-600"
+            className="font-bold text-primary"
           >
             <span className="pr-5">Next</span>
           </button>
