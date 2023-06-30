@@ -1,10 +1,10 @@
 /* eslint-disable no-alert */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState, useRef } from 'react';
-import { TOKENKEY } from 'util/auth';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { createTour } from 'redux/tours/tours';
 
 const AddTours = () => {
   const [name, setName] = useState('');
@@ -15,7 +15,7 @@ const AddTours = () => {
   const [des, setDes] = useState('');
   const navigate = useNavigate();
   const fileInputRef = useRef(null);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const handleReset = () => {
     fileInputRef.current.value = '';
@@ -31,15 +31,8 @@ const AddTours = () => {
     formData.append('image', image);
     formData.append('des', des);
 
-    const response = await fetch(`${process.env.REACT_APP_API_URL}/tours`, {
-      method: 'POST',
-      body: formData,
-      headers: {
-        Authorization: `Bearer ${JSON.parse(localStorage.getItem(TOKENKEY)) ?? null}`,
-      },
-    });
+    const data = dispatch(createTour({ formData, navigate, toast }));
 
-    const data = await response.json();
     if (data.error) {
       toast.error('Oops something went wrong. Please try again');
     } else {
