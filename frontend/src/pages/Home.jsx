@@ -1,14 +1,20 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import TourSlider from 'components/tour/TourSlider';
 import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchTours } from 'redux/tours/tours';
 import { USERKEY, getUser } from 'util/auth';
 
 // eslint-disable-next-line consistent-return
 const Home = () => {
   const [user, setUser] = useState(getUser);
+  const dispatch = useDispatch();
+  const { data } = useSelector((state) => state.tours);
+
   useEffect(() => {
+    dispatch(fetchTours());
     setUser(JSON.parse(localStorage.getItem(USERKEY)) ?? null);
-  }, [setUser]);
+  }, [dispatch, setUser]);
 
   return (
     <section className="h-screen flex flex-col bg-gray-200">
@@ -27,7 +33,7 @@ const Home = () => {
           <h5 className="text-base md:text-xl text-bGrey">Please Select where you want to visit</h5>
         </div>
 
-        <TourSlider />
+        <TourSlider tours={data} />
 
       </div>
     </section>

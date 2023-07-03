@@ -27,7 +27,7 @@ export const fetchToursAll = createAsyncThunk('tours/fetchToursAll', async () =>
 
 export const createTour = createAsyncThunk(
   'tour/createTour',
-  async ({ tour, toast, navigate }) => {
+  async ({ formData, toast }) => {
     try {
       const response = await fetch(
         `${process.env.REACT_APP_API_URL}/tours`,
@@ -36,17 +36,18 @@ export const createTour = createAsyncThunk(
           headers: {
             Authorization: `Bearer ${JSON.parse(localStorage.getItem(TOKENKEY)) ?? null}`,
           },
-          body: tour,
+          body: formData,
         },
       );
 
-      if (response.ok) {
-        const data = await response.json();
-        toast.success('Tour Created Successfully');
-        navigate('/');
-        return data;
+      const data = await response.json();
+
+      if (data.error) {
+        toast.error('Oops Something went wrong. Try again!');
+        return data.error;
       }
-      return toast.error('Oops Something went wrong. Try again!');
+      toast.success('Tour Created Successfully');
+      return data;
     } catch (error) {
       return error;
     }

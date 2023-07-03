@@ -1,18 +1,12 @@
 import { NavLink } from 'react-router-dom';
 import { BiRightArrow, BiLeftArrow } from 'react-icons/bi';
 import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchTours } from 'redux/tours/tours';
+import PropTypes from 'prop-types';
 
-const TourSlider = () => {
-  const dispatch = useDispatch();
-  const tourS = useSelector((state) => state.tours);
+const TourSlider = ({ tours }) => {
   const [cardsPerPage, setCardsPerPage] = useState(window.innerWidth < 768 ? 1 : 3);
-  const { data } = tourS;
-  const totalPages = Math.ceil(data.length / cardsPerPage);
-
+  const totalPages = Math.ceil(tours.length / cardsPerPage);
   const [currentPage, setCurrentPage] = useState(1);
-
   const startIndex = (currentPage - 1) * cardsPerPage;
   const endIndex = startIndex + cardsPerPage;
 
@@ -23,6 +17,7 @@ const TourSlider = () => {
   const handlePrev = () => {
     setCurrentPage((prevPage) => (prevPage > 1 ? prevPage - 1 : prevPage));
   };
+
   const sliceParagraph = (paragraph, limit) => {
     const words = paragraph.split(' ');
     const slicedWords = words.slice(0, limit);
@@ -31,7 +26,6 @@ const TourSlider = () => {
   };
 
   useEffect(() => {
-    dispatch(fetchTours());
     const handleResize = () => {
       setCardsPerPage(window.innerWidth < 768 ? 1 : 3);
     };
@@ -41,7 +35,7 @@ const TourSlider = () => {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, [dispatch]);
+  }, []);
 
   return (
     <>
@@ -57,8 +51,8 @@ const TourSlider = () => {
           </button>
         )}
         <div className="flex items-center justify-evenly w-full md:flex-row flex-col">
-          {data.length === 0 ? <h3>There is no tour kindly add</h3>
-            : data.slice(startIndex, endIndex).map((item) => (
+          {tours.length === 0 ? <h3>There is no tour kindly add</h3>
+            : tours.slice(startIndex, endIndex).map((item) => (
               <div key={item.id} id={item.id} className="card-main shadow-md hover:scale-105 transition-transform duration-300">
                 <NavLink to={`/tour/${item.id}`}>
                   <img src={`http://localhost:3000${item.image_url}`} alt={item.name} />
@@ -118,5 +112,7 @@ const TourSlider = () => {
 
   );
 };
-
+TourSlider.propTypes = {
+  tours: PropTypes.array.isRequired,
+};
 export default TourSlider;

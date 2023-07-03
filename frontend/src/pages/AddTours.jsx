@@ -31,19 +31,18 @@ const AddTours = () => {
     formData.append('image', image);
     formData.append('des', des);
 
-    const data = dispatch(createTour({ formData, navigate, toast }));
+    const data = dispatch(createTour({ formData, toast }));
 
     if (data.error) {
       toast.error('Oops something went wrong. Please try again');
     } else {
-      toast.success('Great! Tour Added successfully');
-
       setName('');
       setCity('');
       setPrice(0);
       setVideo('');
       setDes('');
       handleReset();
+
       navigate('/');
     }
   };
