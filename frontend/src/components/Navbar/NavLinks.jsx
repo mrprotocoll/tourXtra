@@ -16,8 +16,8 @@ const NavLinks = ({ toggleNavbar }) => {
     setUser(JSON.parse(localStorage.getItem(USERKEY)) ?? null);
     if (user) {
       setItems([{ name: 'TOURS', link: '/' }, { name: 'MY RESERVATIONS', link: '/reservations', auth: true },
-        { name: 'ADD A TOUR', link: '/add-tour', auth: true },
-        { name: 'ADD RESERVATION', link: '/add-reservation', auth: true },
+        { name: 'ADD NEW TOUR', link: '/add-tour', auth: true },
+        { name: 'RESERVE A TOUR', link: '/add-reservation', auth: true },
         { name: 'DELETE TOUR', link: '/delete-tour', auth: true }]);
     } else {
       setItems([
