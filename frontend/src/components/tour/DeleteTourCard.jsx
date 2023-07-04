@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const DeleteTourCard = ({tour}) => {
     return (
         <div
@@ -29,6 +31,14 @@ const DeleteTourCard = ({tour}) => {
             </div>
         </div>
     )
+}
+
+DeleteTourCard.propTypes = {
+    tour: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        image_url: PropTypes.string.isRequired,
+        status: PropTypes.bool.isRequired,
+    })
 }
 
 export default DeleteTourCard;
