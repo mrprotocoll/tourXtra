@@ -6,7 +6,7 @@ const DeleteTourCard = ({tour}) => {
             >
             <div className="md:w-[30%] md:h-[150px] p-2">
                 <img
-                src={`http://localhost:3000${tour.image_url}`}
+                src={process.env.REACT_APP_API_ROOT + tour.image_url}
                 alt={tour.name}
                 className="w-full h-full"
                 />
