@@ -15,8 +15,14 @@ const DeleteTourPage = () => {
   }, [dispatch]);
 
   const handleDelete = (id) => {
-    if (window.confirm('Are you sure')) {
+    if (window.confirm('Are you sure delete tour?')) {
       dispatch(deleteTour(id));
+    }
+  };
+
+  const handleRestore = (id) => {
+    if (window.confirm('Are you sure you want to restore deleted tour?')) {
+      dispatch(restoreTour(id));
     }
   };
 
@@ -34,7 +40,7 @@ const DeleteTourPage = () => {
 
           { myTours.length > 0
             ? myTours.map((info) => (
-              <DeleteTourCard key={info.id} tour={info} handleDelete={handleDelete} />
+              <DeleteTourCard key={info.id} tour={info} handleRestore={handleRestore} handleDelete={handleDelete} />
             ))
             : (
               <p className="text-lg font-bold text-gray-800 text-center">

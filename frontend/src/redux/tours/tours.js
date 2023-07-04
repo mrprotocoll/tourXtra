@@ -69,6 +69,21 @@ export const deleteTour = createAsyncThunk(
   },
 );
 
+export const restoreTour = createAsyncThunk(
+  'tours/restoreTour',
+  async (tourId) => {
+    await fetch(`${process.env.REACT_APP_API_URL}/tours/${tourId}`, {
+      method: 'PATCH',
+      body: JSON.stringify({ status: false }),
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem(TOKENKEY)) ?? null}`,
+      },
+    });
+    return tourId;
+  },
+);
+
 const ToursSlice = createSlice({
   name: 'tours',
   initialState: {
@@ -97,6 +112,19 @@ const ToursSlice = createSlice({
             return {
               ...tour,
               status: true,
+            };
+          }
+          return tour;
+        });
+      })
+
+      .addCase(restoreTour.fulfilled, (state, action) => {
+        // Update the status of the restored tour in the Redux store
+        state.myTours = state.myTours.map((tour) => {
+          if (tour.id === action.payload) {
+            return {
+              ...tour,
+              status: false,
             };
           }
           return tour;

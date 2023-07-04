@@ -21,12 +21,12 @@ const DeleteTourCard = ({ tour, handleDelete, handleRestore }) => (
         <>
           <button
             type="button"
-            className="bg-black mb-3 text-[#fff] px-4 py-2 rounded-3xl"
+            className="bg-primary mb-3 text-[#fff] px-4 py-2 rounded-3xl"
             onClick={() => handleRestore(tour.id)}
           >
             Restore
           </button>
-          <span className="bg-primary text-white py-1 px-3 rounded-3xl">Removed</span>
+          <span className="bg-black text-white  px-2 rounded-3xl">Removed</span>
         </>
 
       )}
