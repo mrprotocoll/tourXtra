@@ -2,7 +2,7 @@ import DeleteTourCard from 'components/tour/DeleteTourCard';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { fetchToursAll, deleteTour } from 'redux/tours/tours';
+import { fetchToursAll, deleteTour, restoreTour } from 'redux/tours/tours';
 // import { getUser } from 'util/auth';
 
 const DeleteTourPage = () => {
@@ -40,7 +40,12 @@ const DeleteTourPage = () => {
 
           { myTours.length > 0
             ? myTours.map((info) => (
-              <DeleteTourCard key={info.id} tour={info} handleRestore={handleRestore} handleDelete={handleDelete} />
+              <DeleteTourCard
+                key={info.id}
+                tour={info}
+                handleRestore={handleRestore}
+                handleDelete={handleDelete}
+              />
             ))
             : (
               <p className="text-lg font-bold text-gray-800 text-center">
