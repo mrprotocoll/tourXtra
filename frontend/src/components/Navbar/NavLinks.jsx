@@ -15,10 +15,10 @@ const NavLinks = ({ toggleNavbar }) => {
   useEffect(() => {
     setUser(JSON.parse(localStorage.getItem(USERKEY)) ?? null);
     if (user) {
-      setItems([{ name: 'TOURS', link: '/' }, { name: 'MY RESERVATIONS', link: '/reservations', auth: true },
-        { name: 'ADD NEW TOUR', link: '/add-tour', auth: true },
-        { name: 'RESERVE A TOUR', link: '/add-reservation', auth: true },
-        { name: 'DELETE TOUR', link: '/delete-tour', auth: true }]);
+      setItems([{ name: 'TOURS', link: '/' }, { name: 'MY RESERVATIONS', link: '/reservations' },
+        { name: 'ADD NEW TOUR', link: '/add-tour' },
+        { name: 'RESERVE A TOUR', link: '/add-reservation' },
+        { name: 'DELETE TOUR', link: '/delete-tour' }]);
     } else {
       setItems([
         { name: 'TOURS', link: '/' },
