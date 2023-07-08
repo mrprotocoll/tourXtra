@@ -15,6 +15,7 @@
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
   - [🚀 Live Demo](#live-demo)
+  - [🚀 Link to Backend](#back-end)
   - [🚀 Kaban Board](#Kaban-Board)
     - [Kaban Board Initial State](#initial-state)
   - [🚀 Project Screenshot](#project-screenshot)
@@ -63,6 +64,14 @@ The backend was made with ruby on rails and can be found [here](https://github.c
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 - It will updated when available
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- Link to backend -->
+
+## 🚀 Link to Back-end <a name="back-end"></a>
+
+- [Link to Front-end](https://github.com/mrprotocoll/tourXtra-api)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
