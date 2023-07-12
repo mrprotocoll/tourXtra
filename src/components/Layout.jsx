@@ -6,7 +6,9 @@ import 'styles/global.css';
 const Layout = () => (
   <div className="layout">
     <Nav />
-    <Outlet />
+    <div className="main">
+      <Outlet />
+    </div>
     <ToastContainer
       position="top-center"
       autoClose={10000}

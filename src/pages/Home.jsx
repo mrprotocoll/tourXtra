@@ -17,7 +17,7 @@ const Home = () => {
   }, [dispatch, setUser]);
 
   return (
-    <section className="h-screen flex flex-col bg-gray-200">
+    <section className="h-screen flex flex-col">
       <div className="w-full h-[5rem] bg-gray-100 flex justify-between items-center">
         {user === null ? <h4 className="ml-12 font-bold text-lg">Welcome</h4>
           : (
