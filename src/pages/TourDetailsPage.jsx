@@ -25,6 +25,16 @@ const TourDetailsPage = () => {
       {tourss && (
         <div className="flex flex-col items-center md:justify-start justify-center w-full md:flex-row grow h-full lg:pt-20 lg:pb-10">
           <div className="grow flex items-center justify-center w-full">
+            <div
+              className="fixed text-[1.8rem] bottom-0
+                            md:bottom-[2rem] md:left-[20rem] z-10 bg-primary text-white
+                            rounded-full p-3 cursor-pointer
+                            md:block
+                            "
+              onClick={() => navigate(-1)}
+            >
+              <BiLeftArrow />
+            </div>
             <img
               src={process.env.REACT_APP_API_ROOT + tourss?.image_url}
               alt={decodeURIComponent(tourss?.name)}
@@ -87,16 +97,6 @@ const TourDetailsPage = () => {
           </div>
         </div>
       )}
-      <div
-        className="fixed text-[1.8rem] bottom-0
-                            md:bottom-[2rem] md:left-[20rem] z-10 bg-primary text-white
-                            rounded-full p-3 cursor-pointer
-                            md:block
-                            "
-        onClick={() => navigate(-1)}
-      >
-        <BiLeftArrow />
-      </div>
     </>
   );
 };

@@ -7,6 +7,10 @@
   background: linear-gradient(90deg, rgba(114,254,125,0.1) 0%, rgba(253,58,78,0.1) 23%, rgba(133,90,252,0.1) 40%, rgba(228,199,149,0.1) 57%, rgba(140,168,232,0.1) 79%, rgba(238,165,186,0.1) 100%) !important;
 }
 
+.main > div {
+  height: 100%
+}
+
 .form_input {
   @apply w-full flex rounded-lg my-4 p-3 text-sm bg-slate-100 text-gray-500 outline-0 border border-gray-300;
 }

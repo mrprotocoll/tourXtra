@@ -48,7 +48,7 @@ const AddTours = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="h-screen flex flex-col items-center justify-center">
       <form onSubmit={handleSubmit} className="w-full max-w-lg">
         <h3 className="text-3xl text-center font-bold mt-[35px]">Add Tours</h3>
         <div className="flex flex-wrap -mx-3 mb-2">

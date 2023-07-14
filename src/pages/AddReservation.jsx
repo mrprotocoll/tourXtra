@@ -5,7 +5,7 @@ const AddReservation = () => {
   const { tourId } = useParams();
 
   return (
-    <div className="flex flex-col justify-center items-center bg-primary" id="reservation-page">
+    <div className="h-screen flex flex-col justify-center items-center bg-primary" id="reservation-page">
       <h1 className="text-4xl font-bold mb-2 text-gray-100 ">
         BOOK A TOUR
       </h1>
