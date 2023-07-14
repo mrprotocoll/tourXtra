@@ -1,4 +1,5 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
+import Loader from 'components/Loader/Loader';
 import TourSlider from 'components/tour/TourSlider';
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -9,7 +10,7 @@ import { USERKEY, getUser } from 'util/auth';
 const Home = () => {
   const [user, setUser] = useState(getUser);
   const dispatch = useDispatch();
-  const { data } = useSelector((state) => state.tours);
+  const { data, loading } = useSelector((state) => state.tours);
 
   useEffect(() => {
     dispatch(fetchTours());
@@ -33,7 +34,7 @@ const Home = () => {
           <h5 className="text-base md:text-xl text-bGrey">Please Select where you want to visit</h5>
         </div>
 
-        <TourSlider tours={data} />
+        { loading ? <Loader /> : <TourSlider tours={data} /> }
 
       </div>
     </section>
