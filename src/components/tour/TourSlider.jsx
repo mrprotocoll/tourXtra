@@ -55,7 +55,7 @@ const TourSlider = ({ tours }) => {
             : tours.slice(startIndex, endIndex).map((item) => (
               <div key={item.id} id={item.id} className="card-main shadow-md hover:scale-105 transition-transform duration-300">
                 <NavLink to={`/tour/${item.id}`}>
-                  <img src={`http://localhost:3000${item.image_url}`} alt={item.name} />
+                  <img src={process.env.REACT_APP_API_ROOT + item.image_url} alt={item.name} />
                   <div className="leading-4 p-3">
                     <h3 className="font-bold text-xl space-y-3 ">{item.name}</h3>
                     <p className="Des  py-2 text-gray-500 leading-snug">{sliceParagraph(item.des, 10)}</p>

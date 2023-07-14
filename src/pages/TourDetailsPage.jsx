@@ -26,7 +26,7 @@ const TourDetailsPage = () => {
         <div className="flex flex-col items-center md:justify-start justify-center w-full md:flex-row grow h-full lg:pt-20 lg:pb-10">
           <div className="grow flex items-center justify-center w-full">
             <img
-              src={`http://localhost:3000${tourss?.image_url}`}
+              src={process.env.REACT_APP_API_ROOT + tourss?.image_url}
               alt={decodeURIComponent(tourss?.name)}
               className="block m-4 aspect-square md:ml-[40%] w-full"
             />
@@ -74,7 +74,7 @@ const TourDetailsPage = () => {
               <div className="my-6 flex justify-center">
                 <NavLink
                   to={`/add-reservation/${id}`}
-                  className="bg-lime-500 text-white hover:bg-lime-400 px-6 py-2 rounded-full font-semibold min-w-[10rem] transition-colors border-2 border-transparent mb-4"
+                  className="bg-primary text-white hover:bg-lime-400 px-6 py-2 rounded-full font-semibold min-w-[10rem] transition-colors border-2 border-transparent mb-4"
                 >
                   <div className="flex items-center gap-3 justify-center">
                     <SlSettings />
@@ -89,7 +89,7 @@ const TourDetailsPage = () => {
       )}
       <div
         className="fixed text-[1.8rem] bottom-0
-                            md:bottom-[2rem] md:left-[20rem] z-10 bg-[#98bd2a] text-white
+                            md:bottom-[2rem] md:left-[20rem] z-10 bg-primary text-white
                             rounded-full p-3 cursor-pointer
                             md:block
                             "
