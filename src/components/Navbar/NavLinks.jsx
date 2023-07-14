@@ -24,7 +24,7 @@ const NavLinks = ({ toggleNavbar }) => {
         { name: 'TOURS', link: '/' },
       ]);
     }
-  }, [user]);
+  }, [items]);
 
   return (
     <ul className="mt-4 w-full text-lg sm:text-lg font-bold" onClick={toggleNavbar}>
